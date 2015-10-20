@@ -4,8 +4,10 @@ import horizon
 from openstack_dashboard.dashboards.mydashboard import dashboard
 
 class Mypanel(horizon.Panel):
-    name = _("Mypanel")
+    name = _("My panel")
     slug = "mypanel"
+
+
 
 
 dashboard.Mydashboard.register(Mypanel)
