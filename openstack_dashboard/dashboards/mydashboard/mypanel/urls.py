@@ -1,11 +1,10 @@
 from django.conf.urls import patterns
 from django.conf.urls import url
 
-from openstack_dashboard.dashboards.mydashboard.mypanel.views \
-    import IndexView
+from openstack_dashboard.dashboards.mydashboard.mypanel import views 
 
 
 urlpatterns = patterns(
     '',
-    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
 )

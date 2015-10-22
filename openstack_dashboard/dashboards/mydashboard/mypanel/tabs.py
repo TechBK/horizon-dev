@@ -22,7 +22,7 @@ class InstanceTab(tabs.TableTab):
             marker = self.request.GET.get(
                         tables.InstancesTable._meta.pagination_param, None)
 
-            instances, self._has_more = api.nova.server_list(
+            instances, self._has_more = api.nova.server_list( #chua hieu cho nay
                 self.request,
                 search_opts={'marker': marker, 'paginate': True})
 
