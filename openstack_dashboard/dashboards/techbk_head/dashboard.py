@@ -11,8 +11,8 @@ class Mygroup(horizon.PanelGroup):
 class Techbk_Head(horizon.Dashboard):
     name = _("Techbk Head")
     slug = "techbk_head"
-    panels = ()  # Add your panels here.
-    default_panel = ''  # Specify the slug of the dashboard's default panel.
+    panels = (Mygroup,)  # Add your panels here.
+    default_panel = 'firstpanel'  # Specify the slug of the dashboard's default panel.
 
 
 horizon.register(Techbk_Head)
