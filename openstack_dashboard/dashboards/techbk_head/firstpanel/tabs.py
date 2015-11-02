@@ -7,7 +7,16 @@ from horizon import tabs
 
 class FirstTab(tabs.Tab):
     name = _("Instances Tab")
-    slug = "instances_tab"
+    slug = "first_tab"
 
     template_name = ("")
     preload = False
+
+    def get_instances_data(self):
+    	
+
+
+class FirstTabs(tabs.TabGroup):
+	slug = "First_tabs"
+    tabs = (InstanceTab,)
+    sticky = True

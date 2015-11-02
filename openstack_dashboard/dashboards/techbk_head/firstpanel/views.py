@@ -1,7 +1,11 @@
 from horizon import views
+from horizon import tabs
 
+from openstack_dashboard.dashboards.mydashboard.mypanel \
+    import tabs as my_tabs
 
-class IndexView(views.APIView):
+class IndexView(tabs.TabView):
+	tabs_group_class = my_tabs.FirstTab
     # A very simple class-based view...
     template_name = 'techbk_head/firstpanel/index.html'
 
