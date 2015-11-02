@@ -9,11 +9,11 @@ class FirstTab(tabs.Tab):
     name = _("Instances Tab")
     slug = "first_tab"
 
-    template_name = ("")
+    template_name = ("")#noi de template minh dung
     preload = False
 
     def get_instances_data(self):
-    	
+    	#noi de code return context
 
 
 class FirstTabs(tabs.TabGroup):

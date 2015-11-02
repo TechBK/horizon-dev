@@ -5,7 +5,7 @@ from openstack_dashboard.dashboards.mydashboard.mypanel \
     import tabs as my_tabs
 
 class IndexView(tabs.TabView):
-	tabs_group_class = my_tabs.FirstTab
+	tabs_group_class = my_tabs.FirstTabs
     # A very simple class-based view...
     template_name = 'techbk_head/firstpanel/index.html'
 
