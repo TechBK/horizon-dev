@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "First panel" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Firstpanel") %}
+{% endblock page_header %}
+
+{% block main %}
+	<div class="row">
+	   <div class="col-sm-12">
+
+
+		   	<!-- Upload form. Note enctype attribute! -->
+			<form action="http://0.0.0.0:8877/techbk_head/list/" method="post" enctype="multipart/form-data">
+				{#{% csrf_token %}#}
+				<p>{{ form.non_field_errors }}</p>
+				<p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+				<p>
+					{{ form.docfile.errors }}
+					{{ form.docfile }}
+				</p>
+				<p><input type="submit" value="Upload" /></p>
+			</form>
+	   </div>
+	</div>
+{% endblock %}
