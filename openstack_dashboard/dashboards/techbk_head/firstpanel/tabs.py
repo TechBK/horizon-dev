@@ -6,7 +6,7 @@ from horizon import tabs
 
 
 class FirstTab(tabs.Tab):
-    name = _("Instances Tab")
+    name = _("First Tab")
     slug = "first_tab"
 
     template_name = ("techbk_head/firstpanel/firsttab.html")  # noi de template minh dung

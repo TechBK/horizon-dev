@@ -14,6 +14,27 @@ class IndexView(tabs.TabView):
         return context
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
@@ -57,4 +78,4 @@ def handle_uploaded_file(f):
     destination = open(filename, 'wb+')
     for chunk in f.chunks():
         destination.write(chunk)
-    destination.close()
+    destination.close()"""

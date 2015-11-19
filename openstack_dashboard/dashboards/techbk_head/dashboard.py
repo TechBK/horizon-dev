@@ -6,7 +6,7 @@ import horizon
 class Mygroup(horizon.PanelGroup):
     slug = "firstgroup"
     name = _("First Group")
-    panels = ('firstpanel',)
+    panels = ('firstpanel','newpanel',)
 
 class Techbk_Head(horizon.Dashboard):
     name = _("Techbk Head")
