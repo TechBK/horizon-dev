@@ -8,14 +8,14 @@ class MyFilterAction(tables.FilterAction):
     name = "myfilter"
 
 
-class InstancesTable(tables.DataTable):
-    name = tables.Column("name", verbose_name=_("Name"))
-    status = tables.Column("status", verbose_name=_("Status"))
-    zone = tables.Column('availability_zone',
-                          verbose_name=_("Availability Zone"))
-    image_name = tables.Column('image_name', verbose_name=_("Image Name"))
+class LogsTable(tables.DataTable):
+    time = tables.Column("time", verbose_name=_("Time"))
+    pid = tables.Column("pid", verbose_name=_("PID"))
+    level = tables.Column('level', verbose_name=_("Level"))
+    name = tables.Column('name', verbose_name=_("Name"))
+    content = tables.Column('content', verbose_name=_("Content"))
 
     class Meta:
-        name = "instances"
-        verbose_name = _("Instances")
+        name = "logs"
+        verbose_name = _("Logs")
         table_actions = (MyFilterAction,)
