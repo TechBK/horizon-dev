@@ -29,4 +29,3 @@ class LogsTable(tables.DataTable):
         name = "logs"
         verbose_name = _("Logs")
         table_actions = (LogTableFilterAction,)
-        multi_select = False
