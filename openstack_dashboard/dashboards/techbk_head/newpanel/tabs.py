@@ -3,7 +3,7 @@ __author__ = 'techbk'
 from django.utils.translation import ugettext_lazy as _
 from horizon import exceptions
 from horizon import tabs
-
+from openstack_dashboard.dashboards.techbk_head import api as log_api
 
 class NewTab(tabs.Tab):
     name = _("New Tab")
@@ -14,6 +14,8 @@ class NewTab(tabs.Tab):
 
     def get_context_data(self, request, **kwargs):
         context = {}
+        project = 'nova'
+        context['log'] = log_api.projectlog(project)
         return context
 
 
