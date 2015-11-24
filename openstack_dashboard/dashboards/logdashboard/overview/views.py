@@ -34,7 +34,10 @@ class IndexView(tables.DataTableView):
         logs = json.loads(obj)
         context = []
         for log in logs:
-            if (log['time'] >= self.request.GET['start']) & (log['time'] <= self.request.GET['end']):
+            if (self.request.method == 'GET' and 'start' in self.request.GET and 'end' in self.request.GET):
+                if (log['time'] >= self.request.GET['start']) & (log['time'] <= self.request.GET['end']):
+                    context.append(Log(log['id'], log['time'], log['pid'], log['level'], log['name'], log['content']))
+            else:
                 context.append(Log(log['id'], log['time'], log['pid'], log['level'], log['name'], log['content']))
         return context
 
