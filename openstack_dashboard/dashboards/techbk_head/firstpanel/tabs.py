@@ -15,7 +15,7 @@ class FirstTab(tabs.Tab):
     def get_context_data(self, request, **kwargs):
         context = {}
         project = 'nova'
-        context['json'] = log_api.projectlog(project)['test']
+        context['json'] = log_api.projectlog(project)
         #context['json'] = json.loads(log_api.projectlog(project))['test']
         print(context)
         return context

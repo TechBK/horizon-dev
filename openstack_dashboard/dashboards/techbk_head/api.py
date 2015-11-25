@@ -15,27 +15,34 @@
 # limitations under the License.
 
 
-from django.utils.translation import ugettext_lazy as _
-from horizon.utils import memoized
+# from django.utils.translation import ugettext_lazy as _
+# from horizon.utils import memoized
 from . import logclient
 import json
+
+__author__ = 'techbk'
+
 
 def to_json(func):
     def wrapped(project):
         return json.loads(func(project).text)
+
     return wrapped
 
-#@memoized.memoized
+
+# @memoized.memoized
 def log_client():
-    #return logclient.Client(base_url='http://httpbin.org')
+    # return logclient.Client(base_url='http://httpbin.org')
     return logclient.Client()
+
 
 @to_json
 def projectlog(project):
-    data = {'project':project}
-    return log_client().get_project_log(data)#.text
+    data = {'project': project}
+    return log_client().get_project_log(data)  # .text
+
 
 @to_json
 def test(project):
-    data = {'project':project}
-    return log_client().test(data)#.text
+    data = {'project': project}
+    return log_client().test(data)  # .text
